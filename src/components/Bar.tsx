@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   padding: 0 2rem;
 `
 
-const TitleApp = styled.h1`
+const TitleApp = styled.h2`
   margin: 0;
   padding: 0;
 `
