@@ -18,7 +18,6 @@ const Reducer = (state: GlobalStateInterface, action: ActionType) => {
     },
   }
 
-  console.log(action, Events.changeColors)
   return (
     {
       ...state,
