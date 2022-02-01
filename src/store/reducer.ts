@@ -1,8 +1,7 @@
-import { GlobalStateInterface } from '@/interfaces/GlobalStateInterface'
+import { Events, IAction } from '@/types/action'
+import { IGlobalState } from '@/types/globalState'
 
-import { ActionType, Events } from './types'
-
-const Reducer = (state: GlobalStateInterface, action: ActionType) => {
+const Reducer = (state: IGlobalState, action: IAction) => {
   const event = {
     [Events.selectCurrentColor]: {
       settings: {
@@ -16,14 +15,18 @@ const Reducer = (state: GlobalStateInterface, action: ActionType) => {
         colors: action.payload,
       },
     },
+    [Events.addVoxel]: {
+      voxels: [...state.voxels, action.payload],
+    },
   }
 
-  return (
+  const newState =
     {
       ...state,
       ...(event as any)[action.type],
     } || state
-  )
+
+  return newState
 }
 
 export default Reducer

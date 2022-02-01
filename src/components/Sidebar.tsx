@@ -1,10 +1,9 @@
 import { useContext } from 'react'
-import { Color } from 'react-color-palette'
 import styled from 'styled-components'
 
 import ColorGrid from '@/components/molecules/ColorGrid'
 import { globalContext } from '@/store'
-import { Events } from '@/store/types'
+import { Events } from '@/types/action'
 
 const Sidebar = () => {
   const { globalState, dispatch } = useContext(globalContext)

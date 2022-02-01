@@ -5,6 +5,7 @@ const Theme: DefaultTheme = {
 
   colors: {
     background: '#16161a',
+    backgroundCanvas: '#1b1b20',
     text: '#94a1b2',
     headline: '#fffffe',
     button: '#7f5af0',

@@ -10,7 +10,7 @@ import { Theme } from './theme'
 const Container = styled.div`
   height: 100%;
   display: grid;
-  grid-template-columns: 15rem 1.5fr 1fr;
+  grid-template-columns: 16rem 1.5fr 1fr;
   grid-template-rows: 5rem 1.5fr 1fr;
   gap: 0px 0px;
   grid-template-areas:

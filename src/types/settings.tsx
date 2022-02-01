@@ -1,4 +1,4 @@
-export interface ISettings {
+export type ISettings = {
   currentColor: string
   colors: string[]
 }

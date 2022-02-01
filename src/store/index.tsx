@@ -1,9 +1,20 @@
-import React, { createContext, ReactElement, ReactNode, useReducer } from 'react'
+import React, {
+  createContext,
+  Dispatch,
+  ReactElement,
+  ReactNode,
+  useReducer,
+} from 'react'
 
-import { GlobalStateInterface } from '@/interfaces/GlobalStateInterface'
+import { IAction } from '@/types/action'
+import { IGlobalState } from '@/types/globalState'
 
 import Reducer from './reducer'
-import { ContextType } from './types'
+
+export type ContextType = {
+  globalState: IGlobalState
+  dispatch: Dispatch<IAction>
+}
 
 export const globalContext = createContext({} as ContextType)
 
@@ -17,7 +28,7 @@ export const GlobalStore = ({ children }: { children: ReactNode }): ReactElement
   )
 }
 
-export const initialState: GlobalStateInterface = {
+export const initialState: IGlobalState = {
   settings: {
     currentColor: '#000',
     colors: [
@@ -38,6 +49,9 @@ export const initialState: GlobalStateInterface = {
       '#a52a2a',
     ],
   },
+  undoActions: [],
+  actions: [],
+  voxels: [],
 }
 
 const initializeState = () => {

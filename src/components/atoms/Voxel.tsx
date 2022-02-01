@@ -1,12 +1,14 @@
 import { useRef } from 'react'
 
-import IVoxel from '@/interfaces/voxel'
+import { IVoxel } from '@/types/voxel'
 
-const Voxel = ({ x, y, z, currentColor, onPointerUp }: IVoxel) => {
+type Props = IVoxel
+
+const Voxel = ({ x, y, z, currentColor }: Props) => {
   const boxRef = useRef()
 
   return (
-    <mesh ref={boxRef} position={[x, y, z]} onPointerUp={onPointerUp}>
+    <mesh ref={boxRef} position={[x, y, z]}>
       <boxGeometry attach="geometry" args={[1, 1, 1]} />
       <meshStandardMaterial attach="material" color={currentColor} />
     </mesh>
